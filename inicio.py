@@ -3,21 +3,11 @@ from bottle import route,run, request, jinja2_template as template
 import random
 from beaker.middleware import SessionMiddleware
 
-
+#codigo hardcoded
 @route('/')
-def iniciar(environ, start_response):
-	 # Get the session object from the environ
-    session = environ['beaker.session']
-
-    # Check to see if a value is in the session
-    mivariable = random.randint(1,5) in session
-
-    # Set some other session variable
-    session['mivariable'] = random.randint(1,5)
-
-    start_response('200 OK', [('Content-type', 'text/plain')])
-	
-	return template('base',mivariable=session['mivariable'])
+def iniciar():
+	mivariable = 33
+	return template('base',mivariable=mivariable)
 	
 	
 @route('/numero',method='GET')	

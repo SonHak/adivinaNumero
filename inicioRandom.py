@@ -3,7 +3,7 @@ from bottle import route,run, request, jinja2_template as template
 import random
 from beaker.middleware import SessionMiddleware
 
-
+#codigo intentando con sesiones y random (no funciona)
 @route('/')
 def iniciar(environ, start_response):
 	 # Get the session object from the environ
